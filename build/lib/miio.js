@@ -128,7 +128,7 @@ class Controller extends events_1.EventEmitter {
                     }
                 }
             }
-            return new DeviceClass.DeviceClass(dev);
+            return new DeviceClass.DeviceClass(dev, vendor, type, version);
         });
     }
     findDeviceDefineInfo(token) {

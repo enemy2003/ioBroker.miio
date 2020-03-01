@@ -361,14 +361,14 @@ class Miio extends utils.Adapter {
         for (let i = 0; i < this.config.devices.length; i++) {
             if (configData.token === this.config.devices[i].token) {
                 if ((configData.ip === this.config.devices[i].ip) && (configData.polling === this.config.devices[i].polling) && (configData.id === this.config.devices[i].id)) {
-                    return;
+                    continue;
                 }
                 this.config.devices[i].ip = configData.ip;
                 this.config.devices[i].polling = configData.polling;
                 this.config.devices[i].id = configData.id;
                 this.log.info(`Update Device ${configData.name}'s config: ip = ${configData.ip}, polling = ${configData.polling}, id = ${configData.id}`);
                 this.updateConfig && this.updateConfig(this.config);
-                return;
+                continue;
             }
         }
         // New discovered device
@@ -386,6 +386,7 @@ class Miio extends utils.Adapter {
                         ("[]" === JSON.stringify(this.config.devices))) {
                         if (!this.config.autoDiscover) {
                             this.log.error("No device defined and discover is also disabled.");
+                            reject(new Error("No device defined and discover is also disabled."));
                         }
                     }
                     this.miioController = new miio.Controller({

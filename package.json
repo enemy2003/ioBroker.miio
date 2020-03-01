@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^1.0.3",
-    "miio-lite": "^0.15.7"
+    "miio-lite": "^0.15.7",
+    "miio-dev": "^0.0.4"
   },
   "devDependencies": {
     "@iobroker/testing": "^1.2.5",
