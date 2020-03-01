@@ -231,10 +231,11 @@ export class Controller extends EventEmitter {
                 model: mgmt.model,
             },
             configData: {
+                id: miioID,
                 name: this.findDeviceDefineInfo(mgmt.token).name || mgmt.model,
                 ip: mgmt.address,
                 token: mgmt.token,
-                polling: this.findDeviceDefineInfo(mgmt.token).polling || device.polling,
+                polling: this.findDeviceDefineInfo(mgmt.token).polling || device.polling || 10000,
             },
             autoDiscovered: isAutoDiscovered,
             device: device

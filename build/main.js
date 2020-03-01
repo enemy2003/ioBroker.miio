@@ -361,14 +361,14 @@ class Miio extends utils.Adapter {
         for (let i = 0; i < this.config.devices.length; i++) {
             if (configData.token === this.config.devices[i].token) {
                 if ((configData.ip === this.config.devices[i].ip) && (configData.polling === this.config.devices[i].polling) && (configData.id === this.config.devices[i].id)) {
-                    continue;
+                    return;
                 }
                 this.config.devices[i].ip = configData.ip;
                 this.config.devices[i].polling = configData.polling;
                 this.config.devices[i].id = configData.id;
                 this.log.info(`Update Device ${configData.name}'s config: ip = ${configData.ip}, polling = ${configData.polling}, id = ${configData.id}`);
                 this.updateConfig && this.updateConfig(this.config);
-                continue;
+                return;
             }
         }
         // New discovered device
