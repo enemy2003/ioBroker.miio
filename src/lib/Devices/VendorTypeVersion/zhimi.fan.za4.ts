@@ -13,7 +13,7 @@ import {
 
 export class DeviceClass extends Fan.DeviceClass {
     public get deviceName() {
-        return "zhimi.fan.v3";
+        return "zhimi.fan.za4";
     }
 
     public get deviceType() {
