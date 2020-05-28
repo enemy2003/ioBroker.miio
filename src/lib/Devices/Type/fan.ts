@@ -2,6 +2,7 @@ import { MiioAdapterDevice, MiioAdapterRWState, MiioAdapterROState } from "../de
 import { Device } from "miio-lite";
 import {
     SetPower,
+    SetMove,
     SetChildLock,
     SetBuzzer,
     SetLedB,
@@ -13,6 +14,7 @@ import {
 } from "../../Commands/command";
 import {
     Power,
+    Move,
     ChildLock,
     Buzzer,
     LedB,
@@ -40,6 +42,10 @@ export class DeviceClass extends MiioAdapterDevice {
             power: {
                 command: new SetPower(),
                 property: new Power(),
+            },
+            move: {
+                command: new SetMove(),
+                property: new Move(),
             },
             childLock: {
                 command: new SetChildLock(),
