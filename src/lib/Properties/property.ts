@@ -86,6 +86,17 @@ export class Power extends MiioProperty {
         });
     }
 };
+    
+export class Move extends MiioProperty {
+    constructor() {
+        super("move", {
+            name: "move",
+            desc: "Current device move state",
+            type: "string",
+            enum: ["left", "right"]
+        });
+    }
+};
 
 export class Aqi extends MiioProperty {
     constructor() {
