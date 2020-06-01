@@ -44,6 +44,10 @@ class DeviceClass extends device_1.MiioAdapterDevice {
                 command: new command_1.SetAngleEnable(),
                 property: new property_1.AngleEnable(),
             },
+            move: {
+                command: new command_1.SetMove(),
+                property: new property_1.Move(),
+            },
             timedOff: {
                 command: new command_1.SetPoweroffTime(),
                 property: new property_1.PoweroffTime(),
