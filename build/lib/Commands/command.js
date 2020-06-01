@@ -56,7 +56,7 @@ exports.SetPower = SetPower;
 ;
 class SetMove extends MiioCommand {
     constructor() {
-        super("set_power", {
+        super("set_move", {
             name: "set move",
             desc: "Set move",
             para: [{
