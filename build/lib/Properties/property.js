@@ -92,6 +92,18 @@ class Mode extends MiioProperty {
 }
 exports.Mode = Mode;
 ;
+class Move extends MiioProperty {
+    constructor() {
+        super("move", {
+            name: "move",
+            desc: "move to",
+            type: "string",
+            enum: ["left", "right"]
+        });
+    }
+}
+exports.Move = Move;
+;
 class FilterLife extends MiioProperty {
     constructor() {
         super("filter_life", {
