@@ -5,7 +5,6 @@ import { objectExtend } from "../../tools";
 
 import {
     Battery,
-    Move,
     Humidity,
     TempDec,
     BatCharge,
@@ -36,9 +35,6 @@ export class DeviceClass extends Fan.DeviceClass {
             },
             battery: {
                 property: new Battery(),
-            },
-            move: {
-                property: new Move(),
             },
             ChargeState: {
                 property: new BatCharge(),
